@@ -1,10 +1,70 @@
-import { useSearchParams } from "react-router-dom";
+import { useState, useContext } from "react";
+import { DiaryStateContext } from "../App";
 
-const Home = ()=>{
+import Header from "../components/Header";
+import Button from "../components/Button";
+import DiaryList from "../components/DiaryList";
+
+// 이번 달 글인지 아닌지 판별
+const getMonthlyData = (pivotDate, data) => {
+    const beginTime = new Date(
+        pivotDate.getFullYear(),
+        pivotDate.getMonth(),
+        1,
+        0,
+        0,
+        0
+    ).getTime();
+
+    const endTime = new Date(
+        pivotDate.getFullYear(),
+        pivotDate.getMonth() + 1,
+        0,
+        23,
+        59,
+        59
+    ).getTime();
+
+    return data.filter(
+        (item) => beginTime <= item.createdDate && item.createdDate <= endTime
+    );
+};
+
+const Home = () => {
+    const data = useContext(DiaryStateContext);
+
+    const [pivotDate, setPivotDate] = useState(new Date());
+
+    const monthlyData = getMonthlyData(pivotDate, data);
+
+    const onIncreaseMonth = () => {
+        // 담 달
+        setPivotDate(
+            new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1)
+        );
+    };
+
+    const onDecreaseMonth = () => {
+        // 전 달
+        setPivotDate(
+            new Date(pivotDate.getFullYear(), pivotDate.getMonth() - 1)
+        );
+    };
 
     return (
-        <div>Home</div>
-    )
-}
+        <div>
+            <Header
+                title={`
+                    ${pivotDate.getFullYear()}년 
+                    ${pivotDate.getMonth() + 1}월
+                `}
+                leftChild={<Button text={"<"} onClick={onDecreaseMonth} />}
+                rightChild={<Button text={">"} onClick={onIncreaseMonth} />}
+            />
+
+            <DiaryList data={monthlyData}/>
+        </div>
+    );
+};
 
 export default Home;

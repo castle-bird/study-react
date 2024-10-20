@@ -1,7 +1,7 @@
 // 전체 CSS관련 jsx
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import { mediaQuery, colors } from "./GlobalStyleVar";
+import properties from "./GlobalStyleVar";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -17,11 +17,29 @@ const GlobalStyle = createGlobalStyle`
 
         font-size: 16px;
         line-height: 1.3;
-        color: ${colors.color1};
+        color: ${properties.colors.default};
+
+        ${properties.mediaQuery.desktopSmall`
+            font-size: 14px;
+        `}
     }
+
+    .main-container {
+        ${properties.mediaQuery.desktopSmall`
+            padding: 0 20px;
+        `};
+
+        ${properties.mediaQuery.tablet`
+            padding: 0 15px;
+        `};
+    }    
 
     a {
         text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
     }
 `;
 

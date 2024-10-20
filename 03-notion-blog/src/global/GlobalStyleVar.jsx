@@ -8,13 +8,12 @@ const breakpoints = {
     mobileSmall: "560px",
 };
 
-export const mediaQuery = {
-    desktopSmall: (...styles) => {
-
-        return css` @media only screen and (max-width: ${breakpoints.desktopSmall}) {
+const mediaQuery = {
+    desktopSmall: (...styles) => css`
+        @media only screen and (max-width: ${breakpoints.desktopSmall}) {
             ${css(...styles)}
         }
-    `},
+    `,
     tablet: (...styles) => css`
         @media only screen and (max-width: ${breakpoints.tablet}) {
             ${css(...styles)}
@@ -33,7 +32,15 @@ export const mediaQuery = {
 };
 
 // color 색상
-export const colors = {
+const colors = {
     primary: "#3498db",
-    color1: "#333333",
+    default: "#333333",
 };
+
+const properties = {
+    mediaQuery,
+    colors
+}
+
+
+export default properties;

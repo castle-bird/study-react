@@ -1,5 +1,9 @@
+import { forwardRef } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { mediaQuery, colors } from "../global/GlobalStyleVar";
+
+import logo from "../assets/images/layout/logo.svg";
 
 const HeaderContainer = styled.header`
     .header-wrap {
@@ -9,9 +13,47 @@ const HeaderContainer = styled.header`
         max-width: 1440px;
         margin: 0 auto;
 
+        h1 {
+            width: 40px;
+            height: 40px;
+
+            img {
+                width: 100%;
+            }
+        }
+
         .depth1 {
             display: flex;
             gap: 0 30px;
+
+            > li {
+                position: relative;
+                background-color: orange;
+
+                > a {
+                    padding: 8px 10px;
+                    font-size: 25px;
+                    font-weight: 500;
+                }
+            }
+
+            .depth2 {
+                position: absolute;
+                left: 50%;
+                top: 100%;
+                transform: translateX(-50%);
+                width: max-content;
+                border-radius: 10px;
+                box-shadow: 0px 5px 10px rgba(0 0 0 / 12%);
+
+                > li {
+                    > a {
+                        display: block;
+                        padding: 10px 20px;
+                        text-align: center;
+                    }
+                }
+            }
         }
     }
 `;
@@ -32,11 +74,13 @@ const navList = {
     },
 };
 
-const Header = () => {
+const Header = forwardRef((props, ref) => {
     return (
-        <HeaderContainer>
+        <HeaderContainer ref={ref}>
             <div className="header-wrap">
-                <h1>로고</h1>
+                <h1>
+                    <img src={logo} alt="로고" />
+                </h1>
                 <nav>
                     <ul className="depth1">
                         {Object.values(navList).map((menu) => (
@@ -59,6 +103,10 @@ const Header = () => {
             </div>
         </HeaderContainer>
     );
-};
+});
+
+// display name 설정
+// forwardRef 에러 해결 위함
+Header.displayName = "Header";
 
 export default Header;

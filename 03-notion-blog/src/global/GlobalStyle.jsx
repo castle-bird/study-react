@@ -1,6 +1,7 @@
 // 전체 CSS관련 jsx
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import { mediaQuery, colors } from "./GlobalStyleVar";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -14,8 +15,9 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Noto Sans KR", sans-serif;
         box-sizing: border-box;
 
+        font-size: 16px;
         line-height: 1.3;
-        color: inherit;
+        color: ${colors.color1};
     }
 
     a {

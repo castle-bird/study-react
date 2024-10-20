@@ -2,12 +2,12 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Meta = ({
-    title = "작업 목록 사이트",
-    subject = "개인 블로그 및 기술 공유",
-    description = "이 사이트는 Notion API를 이용한 사이트입니다. 저의 작업경력을 보여줍니다!",
+    title = "경력기술서 사이트",
+    subject = "경력기술서 및 포트폴리오",
+    description = "이 사이트는 Notion API를 이용한 사이트입니다. 저의 경력기술을 보여줍니다!",
     author = "castle-bird",
     keyword = "개발, 블로그, 개인, 기술, Notion, API, React",
-    copy = "Copyright © 2024 코딩 잘하고 싶은 사람. All rights reserved.",
+    copy = "Copyright © 2024 castle-bird. All rights reserved.",
 }) => {
     return (
         <HelmetProvider>
@@ -28,6 +28,8 @@ const Meta = ({
                 <meta property="og:description" content={description} />
 
                 <title>{title}</title>
+
+                <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
             </Helmet>
         </HelmetProvider>
     );

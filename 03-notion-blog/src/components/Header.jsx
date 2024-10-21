@@ -140,6 +140,7 @@ const Header = forwardRef((props, ref) => {
             setIsMobile(mobileChk);
 
             // 모바일 상태에서만 isShow를 false로 설정
+            // PC에서 모바일로 화면 줄일 때 input이 없어져서 설정
             if (mobileChk) {
                 setIsShow(false);
             }
@@ -150,7 +151,24 @@ const Header = forwardRef((props, ref) => {
     }, []);
 
     const onBtnClick = () => {
-        setIsShow(!isShow);
+        // PC화면이면서, input이 보이지 않거나 값이 없을 때는 show & hide
+        if (!isMobile && (!isShow || !inputVal)) {
+            setIsShow(!isShow);
+            return;
+        }
+
+        // 검색함수 실행
+        onSearch();
+    };
+
+    const onSearch =  () => {
+        // 검색어를 매개변수로 받음
+
+        console.log('검색')
+    };
+
+    const onInputChange = (e) => {
+        setInputVal(e.currentTarget.value);
     };
 
     return (
@@ -173,7 +191,13 @@ const Header = forwardRef((props, ref) => {
 
                 <div className="header-search">
                     <span className={`search-input ${isMobile || isShow ? "active" : ""}`} ref={inputBox}>
-                        <input type="text" placeholder="Search" />
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            onChange={(e) => {
+                                onInputChange(e);
+                            }}
+                        />
                     </span>
                     <button onClick={onBtnClick}>
                         <img src={search} alt="검색하기" />

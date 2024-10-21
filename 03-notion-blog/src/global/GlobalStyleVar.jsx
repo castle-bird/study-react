@@ -9,24 +9,24 @@ const breakpoints = {
 };
 
 const mediaQuery = {
-    desktopSmall: (...styles) => css`
+    desktopSmall: (styles) => css`
         @media only screen and (max-width: ${breakpoints.desktopSmall}) {
-            ${css(...styles)}
+            ${styles}
         }
     `,
-    tablet: (...styles) => css`
+    tablet: (styles) => css`
         @media only screen and (max-width: ${breakpoints.tablet}) {
-            ${css(...styles)}
+            ${styles}
         }
     `,
-    mobile: (...styles) => css`
+    mobile: (styles) => css`
         @media only screen and (max-width: ${breakpoints.mobile}) {
-            ${css(...styles)}
+            ${styles}
         }
     `,
-    mobileSmall: (...styles) => css`
+    mobileSmall: (styles) => css`
         @media only screen and (max-width: ${breakpoints.mobileSmall}) {
-            ${css(...styles)}
+            ${styles}
         }
     `,
 };

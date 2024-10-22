@@ -9,6 +9,8 @@ import Publish from "./pages/workList/Publish";
 import Front from "./pages/workList/Front";
 import Notfound from "./pages/Notfound";
 
+import Test from "./pages/Test";
+
 import "./assets/css/style.css";
 
 const App = () => {
@@ -42,6 +44,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/work-list/publish" element={<Publish />} />
                     <Route path="/work-list/front" element={<Front />} />
+                    <Route path="/test" element={<Test />} />
 
                     <Route path="*" element={<Notfound />} />
                 </Routes>

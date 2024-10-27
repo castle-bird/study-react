@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import properties from "../global/GlobalStyleVar";
 
 import logo from "../assets/images/layout/logo.svg";
@@ -30,9 +30,9 @@ const HeaderContainer = styled.header`
                 ${properties.mediaQuery.tablet(`
                    justify-content: center;
 
-                   img {
-                    width: 130px;
-                   }
+                    img {
+                        width: 130px;
+                    }
                 `)}
             }
         }
@@ -161,10 +161,10 @@ const Header = forwardRef((props, ref) => {
         onSearch();
     };
 
-    const onSearch =  () => {
+    const onSearch = () => {
         // 검색어를 매개변수로 받음
 
-        console.log('검색')
+        console.log("검색");
     };
 
     const onInputChange = (e) => {

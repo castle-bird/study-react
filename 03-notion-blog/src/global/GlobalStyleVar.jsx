@@ -35,12 +35,12 @@ const mediaQuery = {
 const colors = {
     primary: "#3498db",
     default: "#333333",
+    gray: "#e8e8e8",
 };
 
 const properties = {
     mediaQuery,
-    colors
-}
-
+    colors,
+};
 
 export default properties;

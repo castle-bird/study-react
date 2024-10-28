@@ -1,32 +1,24 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const MainContainer = styled.div``;
 import axios from "axios";
 
-
 const Home = () => {
     const [state, setState] = useState();
 
-    useEffect(()=>{
-        const fetchNotionDatabase = async () => {
-        
+    useEffect(() => {
+        const getNOTION = async () => {
             try {
-                const response = await axios.get(`/api/databases/${import.meta.env.VITE_NOTION_ID}`, {
-                    headers: {
-                        'Authorization': import.meta.env.VITE_NOTION_TOKEN,
-                        'Notion-Version' : '2022-06-28'
-                    },
-                });
-        
-                return setState(response.data);
+                const response = await axios.get(`/api/notion`);
+                setState(response.data);
             } catch (error) {
-                console.error(error.response ? error.response.data : error.message);
+                console.error("에러 메세지:", error.message);
             }
         };
-        // 호출 함수 실행
-        fetchNotionDatabase();
-    },[])
+
+        getNOTION();
+    }, []);
 
     return (
         <MainContainer>

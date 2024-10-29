@@ -1,29 +1,35 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const MainContainer = styled.div``;
-import axios from "axios";
+import Loading from "../components/Loading";
+import Error from "../components/Error";
+import HomeItems from "../components/HomeItems";
 
-const Home = () => {
-    const [state, setState] = useState();
+const MainContainer = styled.div``;
+
+const Home = ({ data }) => {
+    const [titles, setTitles] = useState([]); // 초기값을 빈 배열로 설정
+
 
     useEffect(() => {
-        const getNOTION = async () => {
-            try {
-                const response = await axios.get(`/api/notion`);
-                setState(response.data);
-            } catch (error) {
-                console.error("에러 메세지:", error.message);
-            }
-        };
-
-        getNOTION();
-    }, []);
+        if (data.data) {
+            const getTitle = data.data.results.map((item) => item.properties.Title.title[0].plain_text)
+            console.log(getTitle)// 정상적으로 배열이 담김
+            setTitles(getTitle)
+        }
+        
+        
+    }, [data]); // data를 의존성 배열에 추가
 
     return (
         <MainContainer>
-            <h1>메인</h1>
-            {JSON.stringify(state)}
+            {
+                data.error ? 
+                <Error /> :
+                data.loading ? 
+                <Loading /> :
+                titles.map((item,idx) => <HomeItems key={idx} title={item}/>)
+            }
         </MainContainer>
     );
 };

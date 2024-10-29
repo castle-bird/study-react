@@ -1,0 +1,723 @@
+{
+    "object": "list",
+    "results": [
+        {
+            "object": "page",
+            "id": "12e0e4e4-d4fe-80c2-8383-ff2735e25b85",
+            "created_time": "2024-10-29T12:45:00.000Z",
+            "last_edited_time": "2024-10-29T12:53:00.000Z",
+            "created_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "last_edited_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "cover": null,
+            "icon": null,
+            "parent": { "type": "database_id", "database_id": "12d0e4e4-d4fe-800a-bd1b-d801b61a7868" },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "Role": {
+                    "id": "CxLO",
+                    "type": "rich_text",
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": { "content": "퍼블리싱", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "퍼블리싱",
+                            "href": null
+                        }
+                    ]
+                },
+                "Tag": {
+                    "id": "v%5E~W",
+                    "type": "multi_select",
+                    "multi_select": [
+                        { "id": "3a885b66-aa63-4385-9844-42980634c91c", "name": "입사", "color": "yellow" },
+                        { "id": "c9f054b1-9c2c-4f26-b48f-b4a44e31d4e4", "name": "퍼블리싱", "color": "blue" },
+                        { "id": "887baa2a-fc7b-47a3-82d6-6d295d93bcce", "name": "웹", "color": "purple" }
+                    ]
+                },
+                "Timeline": {
+                    "id": "zwNy",
+                    "type": "date",
+                    "date": { "start": "2021-12-09", "end": null, "time_zone": null }
+                },
+                "Title": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": { "content": "(주)코드파트너즈 입사", "link": null },
+                            "annotations": {
+                                "bold": true,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "(주)코드파트너즈 입사",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/12e0e4e4d4fe80c28383ff2735e25b85",
+            "public_url": null
+        },
+        {
+            "object": "page",
+            "id": "12e0e4e4-d4fe-80de-ba12-e189738cbe46",
+            "created_time": "2024-10-29T12:45:00.000Z",
+            "last_edited_time": "2024-10-29T12:52:00.000Z",
+            "created_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "last_edited_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "cover": null,
+            "icon": null,
+            "parent": { "type": "database_id", "database_id": "12d0e4e4-d4fe-800a-bd1b-d801b61a7868" },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "Role": {
+                    "id": "CxLO",
+                    "type": "rich_text",
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": { "content": "퍼블리싱", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "퍼블리싱",
+                            "href": null
+                        }
+                    ]
+                },
+                "Tag": {
+                    "id": "v%5E~W",
+                    "type": "multi_select",
+                    "multi_select": [
+                        { "id": "887baa2a-fc7b-47a3-82d6-6d295d93bcce", "name": "웹", "color": "purple" },
+                        { "id": "0d0f4cfb-855c-4988-bb96-789d5d0bfaf6", "name": "운영업무", "color": "green" },
+                        { "id": "c9f054b1-9c2c-4f26-b48f-b4a44e31d4e4", "name": "퍼블리싱", "color": "blue" }
+                    ]
+                },
+                "Timeline": {
+                    "id": "zwNy",
+                    "type": "date",
+                    "date": { "start": "2022-01-01", "end": "2022-09-30", "time_zone": null }
+                },
+                "Title": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": { "content": "(주)엠투커뮤니티 운영", "link": null },
+                            "annotations": {
+                                "bold": true,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "(주)엠투커뮤니티 운영",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/12e0e4e4d4fe80deba12e189738cbe46",
+            "public_url": null
+        },
+        {
+            "object": "page",
+            "id": "12e0e4e4-d4fe-80b3-a0f0-da3a458c5226",
+            "created_time": "2024-10-29T12:45:00.000Z",
+            "last_edited_time": "2024-10-29T12:51:00.000Z",
+            "created_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "last_edited_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "cover": null,
+            "icon": null,
+            "parent": { "type": "database_id", "database_id": "12d0e4e4-d4fe-800a-bd1b-d801b61a7868" },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "Role": {
+                    "id": "CxLO",
+                    "type": "rich_text",
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": { "content": "퍼블리싱", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "퍼블리싱",
+                            "href": null
+                        }
+                    ]
+                },
+                "Tag": {
+                    "id": "v%5E~W",
+                    "type": "multi_select",
+                    "multi_select": [
+                        { "id": "887baa2a-fc7b-47a3-82d6-6d295d93bcce", "name": "웹", "color": "purple" },
+                        { "id": "ad19194b-bff0-49b7-b9e9-a4e065b8023e", "name": "대기업", "color": "pink" },
+                        { "id": "c9f054b1-9c2c-4f26-b48f-b4a44e31d4e4", "name": "퍼블리싱", "color": "blue" },
+                        { "id": "86ed56ac-e210-45a7-8d33-cb49704ca13f", "name": "구축", "color": "orange" }
+                    ]
+                },
+                "Timeline": {
+                    "id": "zwNy",
+                    "type": "date",
+                    "date": { "start": "2022-10-01", "end": "2022-10-31", "time_zone": null }
+                },
+                "Title": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": { "content": "삼성SDI", "link": null },
+                            "annotations": {
+                                "bold": true,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "삼성SDI",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/SDI-12e0e4e4d4fe80b3a0f0da3a458c5226",
+            "public_url": null
+        },
+        {
+            "object": "page",
+            "id": "12e0e4e4-d4fe-804e-8692-dfa9dac3356b",
+            "created_time": "2024-10-29T12:45:00.000Z",
+            "last_edited_time": "2024-10-29T12:50:00.000Z",
+            "created_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "last_edited_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "cover": null,
+            "icon": null,
+            "parent": { "type": "database_id", "database_id": "12d0e4e4-d4fe-800a-bd1b-d801b61a7868" },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "Role": {
+                    "id": "CxLO",
+                    "type": "rich_text",
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": { "content": "퍼블리싱", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "퍼블리싱",
+                            "href": null
+                        }
+                    ]
+                },
+                "Tag": {
+                    "id": "v%5E~W",
+                    "type": "multi_select",
+                    "multi_select": [
+                        { "id": "c9f054b1-9c2c-4f26-b48f-b4a44e31d4e4", "name": "퍼블리싱", "color": "blue" },
+                        { "id": "e78e6acd-6e4e-4f5a-aaeb-39dca826879b", "name": "공공기관", "color": "red" },
+                        { "id": "1d234256-aa28-4bc2-9db4-334a8a2ef583", "name": "웹접근성", "color": "gray" },
+                        { "id": "232fcac8-396b-4123-abdd-9dc2781df08e", "name": "넥사크로", "color": "brown" }
+                    ]
+                },
+                "Timeline": {
+                    "id": "zwNy",
+                    "type": "date",
+                    "date": { "start": "2022-12-01", "end": "2023-01-31", "time_zone": null }
+                },
+                "Title": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": { "content": "국민연금", "link": null },
+                            "annotations": {
+                                "bold": true,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "국민연금",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/12e0e4e4d4fe804e8692dfa9dac3356b",
+            "public_url": null
+        },
+        {
+            "object": "page",
+            "id": "12e0e4e4-d4fe-803d-8aae-c45b7659bd9c",
+            "created_time": "2024-10-29T12:45:00.000Z",
+            "last_edited_time": "2024-10-29T12:49:00.000Z",
+            "created_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "last_edited_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "cover": null,
+            "icon": null,
+            "parent": { "type": "database_id", "database_id": "12d0e4e4-d4fe-800a-bd1b-d801b61a7868" },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "Role": {
+                    "id": "CxLO",
+                    "type": "rich_text",
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": { "content": "퍼블리싱", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "퍼블리싱",
+                            "href": null
+                        }
+                    ]
+                },
+                "Tag": {
+                    "id": "v%5E~W",
+                    "type": "multi_select",
+                    "multi_select": [
+                        { "id": "c9f054b1-9c2c-4f26-b48f-b4a44e31d4e4", "name": "퍼블리싱", "color": "blue" },
+                        { "id": "e78e6acd-6e4e-4f5a-aaeb-39dca826879b", "name": "공공기관", "color": "red" },
+                        { "id": "1d234256-aa28-4bc2-9db4-334a8a2ef583", "name": "웹접근성", "color": "gray" },
+                        { "id": "232fcac8-396b-4123-abdd-9dc2781df08e", "name": "넥사크로", "color": "brown" }
+                    ]
+                },
+                "Timeline": {
+                    "id": "zwNy",
+                    "type": "date",
+                    "date": { "start": "2023-02-01", "end": "2023-06-30", "time_zone": null }
+                },
+                "Title": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": { "content": "나이스 대국민서비스 웹접근성 작업", "link": null },
+                            "annotations": {
+                                "bold": true,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "나이스 대국민서비스 웹접근성 작업",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/12e0e4e4d4fe803d8aaec45b7659bd9c",
+            "public_url": null
+        },
+        {
+            "object": "page",
+            "id": "12e0e4e4-d4fe-802a-b9a7-cfcc00ae2a87",
+            "created_time": "2024-10-29T12:45:00.000Z",
+            "last_edited_time": "2024-10-29T12:49:00.000Z",
+            "created_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "last_edited_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "cover": null,
+            "icon": null,
+            "parent": { "type": "database_id", "database_id": "12d0e4e4-d4fe-800a-bd1b-d801b61a7868" },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "Role": {
+                    "id": "CxLO",
+                    "type": "rich_text",
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": { "content": "퍼블리싱", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "퍼블리싱",
+                            "href": null
+                        }
+                    ]
+                },
+                "Tag": {
+                    "id": "v%5E~W",
+                    "type": "multi_select",
+                    "multi_select": [
+                        { "id": "232fcac8-396b-4123-abdd-9dc2781df08e", "name": "넥사크로", "color": "brown" },
+                        { "id": "c9f054b1-9c2c-4f26-b48f-b4a44e31d4e4", "name": "퍼블리싱", "color": "blue" },
+                        { "id": "ad19194b-bff0-49b7-b9e9-a4e065b8023e", "name": "대기업", "color": "pink" }
+                    ]
+                },
+                "Timeline": {
+                    "id": "zwNy",
+                    "type": "date",
+                    "date": { "start": "2023-07-01", "end": "2023-10-31", "time_zone": null }
+                },
+                "Title": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": { "content": "(주)신세계", "link": null },
+                            "annotations": {
+                                "bold": true,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "(주)신세계",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/12e0e4e4d4fe802ab9a7cfcc00ae2a87",
+            "public_url": null
+        },
+        {
+            "object": "page",
+            "id": "8f4fdaef-9142-4eba-8db2-60f46b06ef93",
+            "created_time": "2024-10-28T14:47:00.000Z",
+            "last_edited_time": "2024-10-29T12:47:00.000Z",
+            "created_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "last_edited_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "cover": null,
+            "icon": null,
+            "parent": { "type": "database_id", "database_id": "12d0e4e4-d4fe-800a-bd1b-d801b61a7868" },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "Role": {
+                    "id": "CxLO",
+                    "type": "rich_text",
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": { "content": "퍼블리싱", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "퍼블리싱",
+                            "href": null
+                        }
+                    ]
+                },
+                "Tag": {
+                    "id": "v%5E~W",
+                    "type": "multi_select",
+                    "multi_select": [
+                        { "id": "232fcac8-396b-4123-abdd-9dc2781df08e", "name": "넥사크로", "color": "brown" },
+                        { "id": "c9f054b1-9c2c-4f26-b48f-b4a44e31d4e4", "name": "퍼블리싱", "color": "blue" },
+                        { "id": "e78e6acd-6e4e-4f5a-aaeb-39dca826879b", "name": "공공기관", "color": "red" }
+                    ]
+                },
+                "Timeline": {
+                    "id": "zwNy",
+                    "type": "date",
+                    "date": { "start": "2023-10-01", "end": "2023-12-31", "time_zone": null }
+                },
+                "Title": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": { "content": "금감원", "link": null },
+                            "annotations": {
+                                "bold": true,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "금감원",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/8f4fdaef91424eba8db260f46b06ef93",
+            "public_url": null
+        },
+        {
+            "object": "page",
+            "id": "b3ae6e1e-5eb1-40cc-81d8-ce6e9a5ac36e",
+            "created_time": "2024-10-28T14:47:00.000Z",
+            "last_edited_time": "2024-10-29T12:46:00.000Z",
+            "created_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "last_edited_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "cover": null,
+            "icon": null,
+            "parent": { "type": "database_id", "database_id": "12d0e4e4-d4fe-800a-bd1b-d801b61a7868" },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "Role": {
+                    "id": "CxLO",
+                    "type": "rich_text",
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": { "content": "퍼블리싱", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "퍼블리싱",
+                            "href": null
+                        }
+                    ]
+                },
+                "Tag": {
+                    "id": "v%5E~W",
+                    "type": "multi_select",
+                    "multi_select": [
+                        { "id": "0d0f4cfb-855c-4988-bb96-789d5d0bfaf6", "name": "운영업무", "color": "green" },
+                        { "id": "887baa2a-fc7b-47a3-82d6-6d295d93bcce", "name": "웹", "color": "purple" },
+                        { "id": "c9f054b1-9c2c-4f26-b48f-b4a44e31d4e4", "name": "퍼블리싱", "color": "blue" }
+                    ]
+                },
+                "Timeline": {
+                    "id": "zwNy",
+                    "type": "date",
+                    "date": { "start": "2024-01-01", "end": "2024-03-31", "time_zone": null }
+                },
+                "Title": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": { "content": "(주) 엠투커뮤니티 운영", "link": null },
+                            "annotations": {
+                                "bold": true,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "(주) 엠투커뮤니티 운영",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/b3ae6e1e5eb140cc81d8ce6e9a5ac36e",
+            "public_url": null
+        },
+        {
+            "object": "page",
+            "id": "ea447382-a21e-4124-856a-6b1ab63ab608",
+            "created_time": "2024-10-28T14:47:00.000Z",
+            "last_edited_time": "2024-10-29T13:17:00.000Z",
+            "created_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "last_edited_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "cover": null,
+            "icon": null,
+            "parent": { "type": "database_id", "database_id": "12d0e4e4-d4fe-800a-bd1b-d801b61a7868" },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "Role": {
+                    "id": "CxLO",
+                    "type": "rich_text",
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": { "content": "퍼블리싱", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "퍼블리싱",
+                            "href": null
+                        }
+                    ]
+                },
+                "Tag": {
+                    "id": "v%5E~W",
+                    "type": "multi_select",
+                    "multi_select": [
+                        { "id": "3a885b66-aa63-4385-9844-42980634c91c", "name": "입사", "color": "yellow" },
+                        { "id": "232fcac8-396b-4123-abdd-9dc2781df08e", "name": "넥사크로", "color": "brown" },
+                        { "id": "c9f054b1-9c2c-4f26-b48f-b4a44e31d4e4", "name": "퍼블리싱", "color": "blue" }
+                    ]
+                },
+                "Timeline": {
+                    "id": "zwNy",
+                    "type": "date",
+                    "date": { "start": "2024-04-15", "end": null, "time_zone": null }
+                },
+                "Title": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": { "content": "DX투비 입사", "link": null },
+                            "annotations": {
+                                "bold": true,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "DX투비 입사",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/DX-ea447382a21e4124856a6b1ab63ab608",
+            "public_url": null
+        },
+        {
+            "object": "page",
+            "id": "12e0e4e4-d4fe-806b-a0af-eeaf1b1caf14",
+            "created_time": "2024-10-29T12:45:00.000Z",
+            "last_edited_time": "2024-10-29T13:17:00.000Z",
+            "created_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "last_edited_by": { "object": "user", "id": "c751786b-7462-46d2-a029-49792947d4ab" },
+            "cover": null,
+            "icon": null,
+            "parent": { "type": "database_id", "database_id": "12d0e4e4-d4fe-800a-bd1b-d801b61a7868" },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "Role": {
+                    "id": "CxLO",
+                    "type": "rich_text",
+                    "rich_text": [
+                        {
+                            "type": "text",
+                            "text": { "content": "퍼블리싱", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "퍼블리싱",
+                            "href": null
+                        }
+                    ]
+                },
+                "Tag": {
+                    "id": "v%5E~W",
+                    "type": "multi_select",
+                    "multi_select": [
+                        { "id": "232fcac8-396b-4123-abdd-9dc2781df08e", "name": "넥사크로", "color": "brown" },
+                        { "id": "c9f054b1-9c2c-4f26-b48f-b4a44e31d4e4", "name": "퍼블리싱", "color": "blue" },
+                        { "id": "ad19194b-bff0-49b7-b9e9-a4e065b8023e", "name": "대기업", "color": "pink" }
+                    ]
+                },
+                "Timeline": {
+                    "id": "zwNy",
+                    "type": "date",
+                    "date": { "start": "2024-07-15", "end": "2024-11-08", "time_zone": null }
+                },
+                "Title": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": { "content": "LX판토스", "link": null },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "LX판토스",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/LX-12e0e4e4d4fe806ba0afeeaf1b1caf14",
+            "public_url": null
+        }
+    ],
+    "next_cursor": null,
+    "has_more": false,
+    "type": "page_or_database",
+    "page_or_database": {},
+    "request_id": "1d90b464-84bf-45d2-b349-28f8658caec4"
+}

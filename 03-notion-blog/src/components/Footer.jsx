@@ -26,6 +26,10 @@ const FooterContainer = styled.footer`
         ul {
             display: flex;
             gap: 20px;
+
+            img {
+                height: 24px;
+            }
         }
     }
 `;

@@ -6,11 +6,15 @@ import Meta from "./global/Meta.jsx";
 import GlobalStyle from "./global/GlobalStyle.jsx";
 import App from "./App.jsx";
 
-createRoot(document.getElementById("root")).render(
-    <BrowserRouter>
-        <Meta/>
-        <GlobalStyle />
+import { NotionContext } from "./context/NotionContext.jsx";
 
-        <App />
-    </BrowserRouter>
+createRoot(document.getElementById("root")).render(
+    <NotionContext>
+        <BrowserRouter>
+            <Meta />
+            <GlobalStyle />
+
+            <App />
+        </BrowserRouter>
+    </NotionContext>
 );

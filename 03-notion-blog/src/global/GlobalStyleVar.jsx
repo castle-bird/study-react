@@ -3,7 +3,7 @@ import { css } from "styled-components";
 // break point (반응형)
 const breakpoints = {
     desktopSmall: "1440px",
-    tablet: "1024px",
+    tablet: "1280px",
     mobile: "768px",
     mobileSmall: "560px",
 };

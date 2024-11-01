@@ -39,7 +39,7 @@ export default async function handler(req, res) {
                 sorts: [
                     {
                         property: "Timeline", // Timeline을 기준으로 정렬
-                        direction: "ascending", // 오름차순 정렬
+                        direction: "descending", //ascending
                     },
                 ],
             },

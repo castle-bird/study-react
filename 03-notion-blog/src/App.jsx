@@ -10,43 +10,10 @@ import Publish from "./pages/workList/Publish";
 import Front from "./pages/workList/Front";
 import Notfound from "./pages/Notfound";
 
-// 노션 리듀서
-const notionReducer = (state, action) => {
-    switch (action.type) {
-        case "SUCCESS":
-            return {
-                ...state,
-                data: action.result,
-                loading: false,
-                error: null,
-            };
-        case "ERROR":
-            return {
-                ...state,
-                data: null,
-                loading: false,
-                error: action.error,
-            };
-        case "LOADING":
-            return {
-                ...state,
-                loading: true,
-                error: null,
-            };
-        default:
-            return state;
-    }
-};
-
 const App = () => {
     const headerRef = useRef();
     const mainRef = useRef();
     const footerRef = useRef();
-    const [notionData, dispatch] = useReducer(notionReducer, {
-        data: null,
-        loading: true,
-        error: null,
-    });
 
     useEffect(() => {
         //main-container의 최소 높이 조절 (브라우저height - 헤더height - 푸터height)
@@ -61,36 +28,15 @@ const App = () => {
 
         mainHeight();
         window.addEventListener("resize", mainHeight);
-
-        const getNOTION = async () => {
-            dispatch({ type: "LOADING" });
-
-            try {
-                const response = await axios.get(`/api/`);
-                dispatch({
-                    type: "SUCCESS",
-                    result: response.data,
-                });
-            } catch (error) {
-                dispatch({
-                    type: "ERROR",
-                    error: error.message,
-                });
-
-                console.log(error.message);
-            }
-        };
-
-        getNOTION();
     }, []);
 
     return (
         <>
             <Header ref={headerRef} />
 
-            <div className="main-container" ref={mainRef}>
+            <div className="main-container" ref={mainRef} style={{paddingBottom: '3rem'}}>
                 <Routes>
-                    <Route path="/" element={<Home data={notionData} />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/work-list/publish" element={<Publish />} />
                     <Route path="/work-list/front" element={<Front />} />
 

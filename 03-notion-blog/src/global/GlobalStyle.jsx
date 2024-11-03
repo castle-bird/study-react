@@ -58,6 +58,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing:border-box;
         font-family: 'Roboto',"Noto Sans KR", sans-serif;
         outline: none;
+        border-radius: 0;
 
         &:focus {
            border-bottom: 1px solid ${properties.colors.primary} !important;

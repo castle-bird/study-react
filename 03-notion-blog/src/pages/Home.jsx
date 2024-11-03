@@ -3,35 +3,37 @@ import styled from "styled-components";
 
 import Loading from "../components/Loading";
 import Error from "../components/Error";
-import HomeItems from "../components/HomeItems";
+import WorkItems from "../components/WorkItems";
 
 import { Context } from "../context/NotionContext";
 import properties from "../global/GlobalStyleVar";
 
-const MainContainer = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
+const MainContainer = styled.div`
+    ul {
+        display: flex;
+        flex-wrap: wrap;
 
-    max-width: calc(1440px + 2rem);
-    margin: 0 auto;
-    gap: 2rem;
+        max-width: calc(1440px + 2rem);
+        height: 100%;
+        margin: 0 auto;
+        gap: 2rem;
 
-    ${properties.mediaQuery.tablet(`
+        ${properties.mediaQuery.tablet(`
         gap: 1.5rem;
     `)}
 
-    ${properties.mediaQuery.mobile(`
+        ${properties.mediaQuery.mobile(`
         gap: 1rem;
     `)}
 
     li {
-        width: calc((100% - 8rem) / 5);
+            width: calc((100% - 8rem) / 5);
 
-        ${properties.mediaQuery.desktopSmall(`
+            ${properties.mediaQuery.desktopSmall(`
             width: calc((100% - 6rem) / 4);
         `)}
 
-        ${properties.mediaQuery.tablet(`
+            ${properties.mediaQuery.tablet(`
             width: calc((100% - 3rem) / 3);
         `)}
 
@@ -42,6 +44,7 @@ const MainContainer = styled.ul`
         ${properties.mediaQuery.mobileSmall(`
             width: 100%;
         `)}
+        }
     }
 `;
 
@@ -50,26 +53,23 @@ const Home = () => {
 
     return (
         <MainContainer>
-            {notionData.loading ? (
-                <Loading />
-            ) : notionData.error ? (
-                <Error />
-            ) : notionData.data ? ( // 데이터가 있는지 확인
-                notionData.data.results.map((item, idx) => (
-                    <li key={idx}>
-                        <HomeItems
-                            title={item.properties.Title.title[0]?.plain_text || ""}
-                            image={item.cover.file?.url || ""}
-                            roles={item.properties.Role?.rich_text[0]?.plain_text || ""}
-                            timelinesStarts={item.properties.Timeline?.date?.start || ""}
-                            timelinesEnds={item.properties.Timeline?.date?.end || ""}
-                            tags={item.properties.Tag?.multi_select || [""]}
-                        />
-                    </li>
-                ))
-            ) : (
-                <p>데이터가 없습니다.</p> // 데이터가 없을 때 표시할 메시지
-            )}
+            <ul>
+                {notionData.loading && <Loading />}
+                {notionData.error && <Error />}
+                {notionData.data &&
+                    notionData.data.results.map((item, idx) => (
+                        <li key={idx}>
+                            <WorkItems
+                                title={item.properties.Title.title[0]?.plain_text || ""}
+                                image={item.cover?.file?.url || ""}
+                                roles={item.properties.Role.rich_text[0]?.plain_text || ""}
+                                timelinesStarts={item.properties.Timeline.date?.start || ""}
+                                timelinesEnds={item.properties.Timeline.date?.end || ""}
+                                tags={item.properties.Tag?.multi_select || [""]}
+                            />
+                        </li>
+                    ))}
+            </ul>
         </MainContainer>
     );
 };

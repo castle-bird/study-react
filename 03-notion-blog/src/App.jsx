@@ -34,7 +34,11 @@ const App = () => {
         <>
             <Header ref={headerRef} />
 
-            <div className="main-container" ref={mainRef} style={{paddingBottom: '3rem'}}>
+            <div
+                className="main-container"
+                ref={mainRef}
+                style={{ paddingBottom: "3rem", position: "relative"}}
+            >
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/work-list/publish" element={<Publish />} />

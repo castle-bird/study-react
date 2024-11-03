@@ -19,6 +19,7 @@ const HeaderContainer = styled.header`
         ${properties.mediaQuery.tablet(`
             flex-direction: column;
             gap: 0;
+            padding: 2.5rem 1rem 3.5rem;
         `)}
 
         h1 {

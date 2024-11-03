@@ -41,7 +41,10 @@ const Items = styled.div`
             padding: 2px 8px;
             border-radius: 5px;
             letter-spacing: -0.5px;
-
+            &.default {
+                background-color: rgba(227, 226, 224, 0.5);
+                color: rgb(50, 48, 44);
+            }
             &.yellow {
                 background-color: rgb(253, 236, 200);
                 color: rgb(64, 44, 27);
@@ -90,7 +93,7 @@ const Items = styled.div`
     }
 `;
 
-const HomeItems = ({ title, image, roles, timelinesStarts, timelinesEnds, tags }) => {
+const WorkItems = ({ title, image, roles, timelinesStarts, timelinesEnds, tags }) => {
     return (
         <Items>
             <strong>{roles}</strong>
@@ -112,4 +115,4 @@ const HomeItems = ({ title, image, roles, timelinesStarts, timelinesEnds, tags }
     );
 };
 
-export default HomeItems;
+export default WorkItems;

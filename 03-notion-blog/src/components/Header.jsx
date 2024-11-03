@@ -1,6 +1,6 @@
-import { forwardRef, useEffect, useState, useRef } from "react";
-import { NavLink } from "react-router-dom";
-import styled, { css } from "styled-components";
+import { forwardRef, useEffect, useState, useRef, useCallback } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import styled from "styled-components";
 import properties from "../global/GlobalStyleVar";
 
 import logo from "../assets/images/layout/logo.svg";
@@ -39,6 +39,27 @@ const HeaderContainer = styled.header`
         }
 
         nav {
+            position: relative;
+
+            ${properties.mediaQuery.tablet(`
+                width: max-content;
+                margin: 0.5rem auto 0;
+            `)};
+
+            .line {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+                height: 2px;
+                margin-left: -6px;
+                padding: 0 6px;
+                background-color: #ea580c;
+
+                box-sizing: initial;
+                transition: 0.3s;
+            }
+
             ul {
                 display: flex;
                 gap: 2.5rem;
@@ -58,7 +79,7 @@ const HeaderContainer = styled.header`
                         font-weight: 700;
 
                         ${properties.mediaQuery.tablet(`
-                            padding: 1rem 0;
+                            padding: 0.5rem 0;
                             font-size: 1rem;
                         `)}
                     }
@@ -131,29 +152,32 @@ const Header = forwardRef((props, ref) => {
     const [isMobile, setIsMobile] = useState(); // PC,MOBILE 화면 체크하는 state
     const [isShow, setIsShow] = useState(false); // 검색 input이 보이는지 체크하는 state
     const [inputVal, setInputVal] = useState(""); // 검색어 input value
-    const inputBox = useRef(); // .search-input
+    const inputBox = useRef(null); // .search-input
+    const navLine = useRef(null); // .nav > div
+    const navButtons = useRef([]); // .nav > ul > li > a
+    const [currentPathname, setCurrentPathname] = useState(location.pathname);
 
-    useEffect(() => {
-        // PC, MOBILE을 체크한다
-        const mobileChk = () => {
-            const mobileChk = window.innerWidth < 1024;
+    // PC, MOBILE을 체크한다
+    const mobileChk = useCallback(() => {
+        const mobile = window.innerWidth < 1280;
 
-            setIsMobile(mobileChk);
-
-            // 모바일 상태에서만 isShow를 false로 설정
-            // PC에서 모바일로 화면 줄일 때 input이 없어져서 설정
-            if (mobileChk) {
-                setIsShow(false);
-            }
-        };
-
-        mobileChk();
-        window.addEventListener("resize", mobileChk);
+        setIsMobile(mobile);
+        // 모바일 상태에서만 isShow를 false로 설정
+        // PC에서 모바일로 화면 줄일 때 input이 없어져서 설정
+        if (mobileChk) {
+            setIsShow(false);
+        }
     }, []);
 
+    useEffect(() => {
+        mobileChk();
+        window.addEventListener("resize", mobileChk);
+    }, [mobileChk]);
+
+    // 검색버튼 show & hide
     const onBtnClick = () => {
-        // PC화면이면서, input이 보이지 않거나 값이 없을 때는 show & hide
-        if (!isMobile && (!isShow || !inputVal)) {
+        // PC화면이면서, 값이 없으면 show & hide
+        if (!isMobile && !inputVal) {
             setIsShow(!isShow);
             return;
         }
@@ -162,6 +186,7 @@ const Header = forwardRef((props, ref) => {
         onSearch();
     };
 
+    // 검색 기능
     const onSearch = () => {
         // 검색어를 매개변수로 받음
 
@@ -172,6 +197,31 @@ const Header = forwardRef((props, ref) => {
         setInputVal(e.currentTarget.value);
     };
 
+    const onMoveLine = useCallback(() => {
+        const activeIndex = navButtons.current.findIndex((btn) => btn.getAttribute("href") === currentPathname); // 활성화된 nav의 index값
+        console.log(activeIndex)
+        // 활성화된 nav가 있는 경우에만
+        const left = navButtons.current[activeIndex].offsetLeft;
+        const width = navButtons.current[activeIndex].scrollWidth;
+
+        navLine.current.style.cssText = `left:${left}px; width:${width}px`;
+    }, [currentPathname]);
+
+    const onNavClick = (e) => {
+        const pathname = e.currentTarget.getAttribute("href");
+        setCurrentPathname(pathname);
+
+        onMoveLine();
+    };
+
+    useEffect(() => {
+        onMoveLine();
+        window.addEventListener("load", onMoveLine);
+        return () => {
+            window.removeEventListener("load", onMoveLine); // 클린업으로 이벤트 리스너 해제
+        };
+    }, [onMoveLine, isMobile]);
+
     return (
         <HeaderContainer ref={ref}>
             <div className="header-wrap">
@@ -181,10 +231,19 @@ const Header = forwardRef((props, ref) => {
                     </NavLink>
                 </h1>
                 <nav>
+                    <div className="line" ref={navLine}></div>
                     <ul>
-                        {Object.values(navList).map((nav) => (
+                        {Object.values(navList).map((nav, idx) => (
                             <li key={nav.path}>
-                                <NavLink to={nav.path}>{nav.label}</NavLink>
+                                <NavLink
+                                    to={nav.path}
+                                    onClick={(e) => {
+                                        onNavClick(e);
+                                    }}
+                                    ref={(item) => (navButtons.current[idx] = item)} // href 속성 출력
+                                >
+                                    {nav.label}
+                                </NavLink>
                             </li>
                         ))}
                     </ul>

@@ -48,7 +48,6 @@ export const NotionContext = ({ children }) => {
 
         try {
             const response = await axios.get(`/api/`);
-            console.log(response)
 
             dispatch({
                 type: "SUCCESS",

@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useState, useRef, useCallback, useContext } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import properties from "../global/GlobalStyleVar";
 
@@ -24,7 +24,10 @@ const HeaderContainer = styled.header`
         `)}
 
         h1 {
-            a {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            /* a {
                 display: flex;
                 height: 100%;
                 align-items: center;
@@ -36,7 +39,14 @@ const HeaderContainer = styled.header`
                         width: 130px;
                     }
                 `)}
-            }
+            } */
+            ${properties.mediaQuery.tablet(`
+                justify-content: center;
+
+                img {
+                    width: 130px;
+                }
+            `)}
         }
 
         nav {
@@ -146,6 +156,7 @@ const Header = forwardRef((props, ref) => {
     const navButtons = useRef([]); // .nav > ul > li > a
     const [currentPathname, setCurrentPathname] = useState(location.pathname);
     const { setSearchItem } = useContext(Context);
+    const nav = useNavigate();
 
     // PC, MOBILE을 체크한다
     const mobileChk = useCallback(() => {
@@ -165,9 +176,20 @@ const Header = forwardRef((props, ref) => {
     }, [mobileChk]);
 
     // 검색 기능
-    const onSearch = useCallback(() => {
-        setSearchItem(inputVal);
-    }, [inputVal, setSearchItem]);
+    const onSearch = useCallback(
+        (value) => {
+            const trimmedValue = value.trim(); // 현재 입력값을 로컬 변수에 저장\
+
+            if (trimmedValue || "") {
+                setInputVal(trimmedValue); // 상태 업데이트
+                setSearchItem(inputVal);
+                nav(`/search`); // 네비게이션
+            } else {
+                alert("검색어를 입력해주세요!");
+            }
+        },
+        [nav, inputVal, setSearchItem]
+    );
 
     // 검색버튼 show & hide
     const onBtnClick = useCallback(() => {
@@ -178,12 +200,8 @@ const Header = forwardRef((props, ref) => {
         }
 
         // 검색함수 실행
-        onSearch();
+        onSearch(inputVal);
     }, [isShow, inputVal, isMobile, onSearch]);
-
-    const onInputChange = (e) => {
-        setInputVal(e.currentTarget.value);
-    };
 
     const onMoveLine = useCallback(() => {
         const activeIndex = navButtons.current.findIndex((btn) => btn.getAttribute("href") === currentPathname); // 활성화된 nav의 index값
@@ -219,9 +237,10 @@ const Header = forwardRef((props, ref) => {
         <HeaderContainer ref={ref}>
             <div className="header-wrap">
                 <h1>
-                    <NavLink to={"/"}>
+                    {/* <NavLink to={"/"}>
                         <img src={logo} alt="로고" />
-                    </NavLink>
+                    </NavLink> */}
+                    <img src={logo} alt="로고" />
                 </h1>
                 <nav>
                     <div className="line" ref={navLine}></div>
@@ -233,7 +252,7 @@ const Header = forwardRef((props, ref) => {
                                     onClick={(e) => {
                                         onNavClick(e);
                                     }}
-                                    ref={(item) => (navButtons.current[idx] = item)} // href 속성 출력
+                                    ref={(item) => (navButtons.current[idx] = item)} // href 속성 출력 activeIndex를 구하기 위함
                                 >
                                     {nav.label}
                                 </NavLink>
@@ -247,12 +266,10 @@ const Header = forwardRef((props, ref) => {
                         <input
                             type="text"
                             placeholder="Search"
-                            onChange={(e) => {
-                                onInputChange(e);
-                            }}
+                            onChange={(e) => setInputVal(e.currentTarget.value)}
                             onKeyDown={(e) => {
                                 if (e.key === "Enter") {
-                                    onSearch(); // Enter 키를 누르면 검색 실행
+                                    onSearch(e.currentTarget.value); // Enter 키를 누르면 검색 실행
                                 }
                             }}
                         />

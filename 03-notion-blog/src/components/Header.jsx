@@ -1,10 +1,11 @@
-import { forwardRef, useEffect, useState, useRef, useCallback } from "react";
+import { forwardRef, useEffect, useState, useRef, useCallback, useContext } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import properties from "../global/GlobalStyleVar";
 
 import logo from "../assets/images/layout/logo.svg";
-import search from "../assets/images/layout/search.svg";
+import SearchButton from "./SearchButton";
+import { Context } from "../context/NotionContext";
 
 const HeaderContainer = styled.header`
     .header-wrap {
@@ -116,18 +117,6 @@ const HeaderContainer = styled.header`
                     padding: 3px 5px 0;
                 }
             }
-
-            button {
-                width: 34px;
-                height: 34px;
-                padding: 0;
-                background: none;
-
-                img {
-                    display: block;
-                    margin: 0 auto;
-                }
-            }
         }
     }
 `;
@@ -135,15 +124,15 @@ const HeaderContainer = styled.header`
 // navi 메뉴 data
 const navList = {
     home: {
-        label: "Home",
+        label: "All",
         path: "/",
     },
     front: {
-        label: "Frontend",
+        label: "프론트엔드",
         path: "/work-list/front",
     },
     pub: {
-        label: "Publishing",
+        label: "퍼블리싱",
         path: "/work-list/publish",
     },
 };
@@ -156,6 +145,7 @@ const Header = forwardRef((props, ref) => {
     const navLine = useRef(null); // .nav > div
     const navButtons = useRef([]); // .nav > ul > li > a
     const [currentPathname, setCurrentPathname] = useState(location.pathname);
+    const { setSearchItem } = useContext(Context);
 
     // PC, MOBILE을 체크한다
     const mobileChk = useCallback(() => {
@@ -174,8 +164,13 @@ const Header = forwardRef((props, ref) => {
         window.addEventListener("resize", mobileChk);
     }, [mobileChk]);
 
+    // 검색 기능
+    const onSearch = useCallback(() => {
+        setSearchItem(inputVal);
+    }, [inputVal, setSearchItem]);
+
     // 검색버튼 show & hide
-    const onBtnClick = () => {
+    const onBtnClick = useCallback(() => {
         // PC화면이면서, 값이 없으면 show & hide
         if (!isMobile && !inputVal) {
             setIsShow(!isShow);
@@ -184,14 +179,7 @@ const Header = forwardRef((props, ref) => {
 
         // 검색함수 실행
         onSearch();
-    };
-
-    // 검색 기능
-    const onSearch = () => {
-        // 검색어를 매개변수로 받음
-
-        console.log("검색");
-    };
+    }, [isShow, inputVal, isMobile, onSearch]);
 
     const onInputChange = (e) => {
         setInputVal(e.currentTarget.value);
@@ -199,12 +187,17 @@ const Header = forwardRef((props, ref) => {
 
     const onMoveLine = useCallback(() => {
         const activeIndex = navButtons.current.findIndex((btn) => btn.getAttribute("href") === currentPathname); // 활성화된 nav의 index값
-        console.log(activeIndex)
-        // 활성화된 nav가 있는 경우에만
-        const left = navButtons.current[activeIndex].offsetLeft;
-        const width = navButtons.current[activeIndex].scrollWidth;
 
-        navLine.current.style.cssText = `left:${left}px; width:${width}px`;
+        // 활설화된 네비가 있을 경우에만
+        // not found의 경우 활성화된 nav가 없어서 에러 발생
+        if (activeIndex !== -1) {
+            const left = navButtons.current[activeIndex].offsetLeft;
+            const width = navButtons.current[activeIndex].scrollWidth;
+
+            navLine.current.style.cssText = `left:${left}px; width:${width}px`;
+        } else {
+            navLine.current.style.cssText = `left:0px; width:0px; padding:0;`;
+        }
     }, [currentPathname]);
 
     const onNavClick = (e) => {
@@ -257,11 +250,14 @@ const Header = forwardRef((props, ref) => {
                             onChange={(e) => {
                                 onInputChange(e);
                             }}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") {
+                                    onSearch(); // Enter 키를 누르면 검색 실행
+                                }
+                            }}
                         />
                     </span>
-                    <button onClick={onBtnClick}>
-                        <img src={search} alt="검색하기" />
-                    </button>
+                    <SearchButton onClick={onBtnClick} />
                 </div>
             </div>
         </HeaderContainer>

@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Publish from "./pages/workList/Publish";
 import Front from "./pages/workList/Front";
+import Search from "./pages/Search";
 import Notfound from "./pages/Notfound";
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/work-list/publish" element={<Publish />} />
                     <Route path="/work-list/front" element={<Front />} />
+                    <Route path="/search" element={<Search />} />
 
                     <Route path="*" element={<Notfound />} />
                 </Routes>

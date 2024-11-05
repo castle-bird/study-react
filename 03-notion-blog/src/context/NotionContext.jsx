@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useReducer, useEffect, useState } from "react";
 import axios from "axios";
 
 // 노션 리듀서
@@ -17,8 +17,6 @@ const notionReducer = (state, action) => {
                 data: action.result,
                 loading: false,
                 error: null,
-
-                
             };
         case "ERROR":
             return {
@@ -43,6 +41,9 @@ export const NotionContext = ({ children }) => {
         error: null,
     });
 
+    // 검색을 위한 state
+    const [searchItem, setSearchItem] = useState("");
+
     const getNOTION = async () => {
         dispatch({ type: "LOADING" });
 
@@ -65,5 +66,5 @@ export const NotionContext = ({ children }) => {
         getNOTION();
     }, []);
 
-    return <Context.Provider value={{ notionData, getNOTION }}>{children}</Context.Provider>;
+    return <Context.Provider value={{ notionData, getNOTION, searchItem, setSearchItem }}>{children}</Context.Provider>;
 };

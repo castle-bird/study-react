@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import properties from "../global/GlobalStyleVar";
 
 const Items = styled.div`
     display: flex;
@@ -10,15 +11,56 @@ const Items = styled.div`
     box-shadow: 0 0 5px rgba(0 0 0 / 25%);
 
     strong {
-        padding: 0 0 0.75rem;
+        position: relative;
+        padding: 0 0.5rem;
+        margin-bottom: 0.75rem;
         font-size: 0.875rem;
         font-weight: 700;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 7px;
+
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #ea580c;
+
+            ${properties.mediaQuery.tablet(`
+                top: 6px;
+                width: 3px;
+                height: 3px;    
+            `)}
+        }
     }
 
     .title {
         padding: 0.5rem 0 0.75rem;
         font-size: 1.125rem;
+        font-weight: 500;
         letter-spacing: -1px;
+
+        span {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -5px;
+                right: -5px;
+                bottom: 4px;
+                height: 7px;
+                background-color: #ea580c;
+                opacity: 0.35;
+                z-index: -1;
+
+                ${properties.mediaQuery.tablet(`
+                    height: 5px;
+                `)}
+            }
+        }
     }
 
     .thumb {
@@ -29,7 +71,9 @@ const Items = styled.div`
     }
 
     .date {
+        font-size: 0.875rem;
         padding-bottom: 0.5rem;
+        font-weight: 500;
     }
 
     .tags {
@@ -98,7 +142,9 @@ const WorkItems = ({ title, image, roles, timelinesStarts, timelinesEnds, tags }
         <Items>
             <strong>{roles}</strong>
             <div className="thumb" style={{ backgroundImage: `url(${image})` }}></div>
-            <h4 className="title">{title}</h4>
+            <h4 className="title">
+                <span>{title}</span>
+            </h4>
             <p className="date">
                 기간 : {timelinesStarts}
                 {/* 끝나는 날짜 없으면 안나옴 */}

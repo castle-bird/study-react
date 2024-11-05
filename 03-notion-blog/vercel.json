@@ -1,7 +1,4 @@
 {
     "version": 2,
-    "rewrites": [
-      { "source": "/api/(.*)", "destination": "/api/notion.js" }
-    ]
-  }
-  
+    "rewrites": [{ "source": "/api/(.*)", "destination": "/api/notion.js" }]
+}

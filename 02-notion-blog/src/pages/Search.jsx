@@ -61,7 +61,8 @@ const Search = () => {
                         .filter(
                             (item) =>
                                 item.properties.Tag.multi_select.some((tag) => tag.name.includes(searchItem)) || // 태그에 검색어 있는 것
-                                item.properties.Role.rich_text[0]?.plain_text.includes(searchItem) // Role에 검색어 있는 것
+                                item.properties.Role.rich_text[0]?.plain_text.includes(searchItem) || // Role에 검색어 있는 것
+                                item.properties.Title.title[0]?.plain_text.includes(searchItem) // Title에 검색어 있는 것
                         )
                         .map((item, idx) => (
                             <li key={idx}>
